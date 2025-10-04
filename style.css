@@ -1,0 +1,519 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #606468;
+}
+
+/* Navbar styling */
+nav {
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Aligns the navbar items to the right */
+    position: absolute; /* Makes the nav float on top */
+    top: 0;
+    right: 0;
+    background-color: #2c3338;
+    padding: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap:5px; /* Adds space between "About" and "Login" */
+}
+
+.nav-links a {
+    color:white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links .login-button {
+    
+    padding: 6px 20px;
+    border-radius: 20px;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links .login-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+/* Section Styling */
+.search-section {
+    width: 100%;
+    max-width: 1000px;
+    background:white url;
+    padding: 30px;
+    margin-top: 65px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Title */
+.search-section h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Tab Menu */
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    margin: 0 10px;
+}
+
+.tab a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #f0efef;
+    transition: 0.3s;
+}
+
+.tab a.active, .tab a:hover {
+    background: #6d4afe;
+    color: white;
+}
+
+.new-badge {
+    background: #ff4f4f;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 50px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    padding: 15px;
+    outline: none;
+    border-radius: 50px;
+    width: 100%;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.location {
+    width: 30%;
+}
+
+.search-input {
+    width: 60%;
+}
+
+.search-btn {
+    background-color: #00c853;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #00a045;
+}
+
+/* Last Search */
+.last-search {
+    margin-top: 20px;
+}
+
+.last-search span {
+    color: #666;
+}
+
+.last-search a {
+    color: #6d4afe;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Background Decorative Elements */
+.search-section::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-size: contain;
+    width: 100px;
+    height: 200px;
+    opacity: 0.1;
+}
+
+.search-section::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    background: url('couple-photo.png') no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 200px;
+    opacity: 0.1;
+}
+
+/* login */
+.mydiv {
+    margin: auto;
+    width: 500px;
+    max-width: 90%;
+    font-size: 18px;
+    
+}
+/* form box */
+.mydiv form {
+    
+    height: 55%;
+    width: 80%;
+    background-color: #2c3338;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is distributed from top to bottom */
+    /* background: rgba( 255, 255, 255, 0.05 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8px );
+-webkit-backdrop-filter: blur( 8px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+
+
+/* heading */
+.mydiv form h1 {
+    text-align: center;
+    margin-bottom: 29px;
+    color: #6d4afe;
+}
+
+
+/* text area */
+.mydiv form .form-control {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid silver;
+    padding: 0 10px;
+    margin-top: 10px;
+    
+}
+.mydiv label{
+    color: #c7bebe;
+}
+
+/* submit button */
+.mydiv form .btn {
+    display: block;
+    width: 120px;
+    height: 34px;
+    margin: 1% auto 0 auto;
+    border: none;
+    outline: none;
+    background: #614cea;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 4px;
+    transition: 0.3s;
+    padding: 2%;
+}
+
+
+.mydiv form p {
+    text-align: center;
+    margin-top: 10px; /* Ensures the link stays at the bottom */
+    margin-bottom: 0; /* Avoids extra margin below the paragraph */
+}
+
+.mydiv form p a {
+    color: #614cea;
+    text-decoration: none;
+    margin-left: 1%;
+}
+
+/* Style for invalid input fields (red border) */
+.form-control.error {
+    border-color: red;
+}
+
+/* Style for the error messages */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+
+/* register */
+.mydiv1 {
+    margin: auto;
+    width: 500px;
+    max-width: 90%;
+    font-size: 18px;
+}
+
+.mydiv1 form {
+    width: 85%;
+    height: 120%;
+    padding: 20px;
+    background-color: #2c3338;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is distributed from top to bottom */
+    /* background: rgba( 255, 255, 255, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8px );
+-webkit-backdrop-filter: blur( 8px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+}
+/* Specific styling for the Role label and select */
+.mydiv1 label[for="role"] {
+    color: #c7bebe; /* Light color for the label text */
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.mydiv1 select#role {
+    width: 100%;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid silver;
+    margin: 10px 0 18px 0;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+.mydiv1 form h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #6d4afe;
+}
+.mydiv1 label{
+    color: #c7bebe;
+}
+
+.mydiv1 form .form-control1 {
+    width: 100%;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid silver;
+    margin: 10px 0 18px 0;
+    padding: 0 10px;
+}
+
+.mydiv1 form p {
+    text-align: center;
+    margin-top: 20px; /* Ensures the link stays at the bottom */
+    margin-bottom: 0; /* Avoids extra margin below the paragraph */
+    
+}
+
+.mydiv1 form p a {
+    color: #614cea;
+    text-decoration: none;
+    
+}
+
+.mydiv1 form p a:hover {
+    text-decoration: underline;
+}
+
+.mydiv1 form .btn {
+    display: block;
+    width: 120px;
+    height: 34px;
+    margin: 4% auto 0 auto;
+    border: none;
+    outline: none;
+    background: #614cea;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 4px;
+    transition: 0.3s;
+    padding: 2%;
+}
+
+.property {
+    box-sizing: border-box;
+     width: 400px; /*space between property */
+    max-height: 400px; /* Limit the height of the box */
+    margin: 20px; /* Adjusts space between properties */
+    padding: 20px; /* Inner space for content */
+    background: transparent ;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for a lifted effect */
+    text-align: left; /* Align text to the left */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+.properties-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between properties */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    margin-top: 20px;
+}
+.property:hover {
+    transform: scale(1.05); /* Slightly enlarges the box on hover */
+}
+
+.property img {
+    width: 370px; /* Make the image responsive */
+    height: 200px; /* Maintain aspect ratio */
+    border-radius: 8px; /* Round image corners */
+}
+.details-button {
+    background-color: #614cea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #3a2db3;
+}
+
+/* About Section */
+.about-container {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.about-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+/* Contact Section */
+.contact-info {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #555;
+}
+
+
+/* Dropdown Styles */
+nav ul.nav-links .dropdown {
+    position: relative;
+}
+
+nav ul.nav-links .dropdown .dropdown-btn {
+    cursor: pointer;
+}
+
+nav ul.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav ul.nav-links .dropdown-content a {
+    padding:1px;
+    text-align: left;
+    color: white;
+}
+
+nav ul.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul.nav-links .dropdown-content a:hover {
+    background-color: #575757;
+}
+
+nav ul.nav-links li a:hover {
+    background-color: #575757;
+}

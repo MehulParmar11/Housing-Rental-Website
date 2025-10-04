@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style302.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="property-listings.html">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="property-details">
+        <h1 id="property-title">Property Details</h1>
+        <img id="property-image" src="" alt="Property Image">
+        
+        <p id="property-location">Location: </p>
+        <p id="property-price">Price: </p>
+        <p id="property-area">Area: </p>
+        <p id="property-bedrooms">Bedrooms: </p>
+        <p id="property-bathrooms">Bathrooms: </p>
+        <p id="property-furnishing">Furnishing: </p>
+        <p id="property-amenities">Amenities: </p>
+        <p id="property-description">Description: </p>
+        <p id="property-contact">Contact: </p>
+        <Center><a href="payment.html" class="details-button">Book Now</a></Center>
+    </section>
+
+    <script>
+        // Property data for each listing with additional details
+        const properties = {
+            "property1": {
+                title: "3 BHK Flat For Rent",
+                location: "Thaltej, Ahmedabad",
+                price: "23000/Month",
+                area: "1500 sq.ft.",
+                bedrooms: 3,
+                bathrooms: 2,
+                furnishing: "Fully Furnished",
+                amenities: "Parking, 24/7 Water Supply, Lift, Security",
+                image: "images/rental-laws.jpg",
+                description: "Spacious 3 BHK flat with modern amenities in a prime location of Thaltej.",
+                contact: "Contact Agent: +91 9876543210"
+
+            },
+            "property2": {
+                title: "2 BHK Flat for Rent",
+                location: "Akota, Vadodara",
+                price: "25000/Month",
+                area: "1200 sq.ft.",
+                bedrooms: 2,
+                bathrooms: 2,
+                furnishing: "Semi Furnished",
+                amenities: "Parking, Garden, 24/7 Security",
+                image: "images/house101.jpg",
+                description: "Comfortable 2 BHK flat for rent with easy access to the city center.",
+                contact: "Contact Owner: +91 9988776655"
+            },
+            "property3": {
+                title: "4 BHK Villa",
+                location: "Bhayli, Vadodara",
+                price: "70000/Month",
+                area: "2500 sq.ft.",
+                bedrooms: 4,
+                bathrooms: 4,
+                furnishing: "Fully Furnished",
+                amenities: "Private Pool, Parking, Gym, Garden",
+                image: "images/house102.jpg",
+                description: "Luxurious 4 BHK villa with a private garden and pool.",
+                contact: "Contact Agent: +91 8877665544"
+            },
+            "property4": {
+                title: "1 BHK Flat for Rent",
+                location: "Harinagar, Vadodara",
+                price: "13000/Month",
+                area: "600 sq.ft.",
+                bedrooms: 1,
+                bathrooms: 1,
+                furnishing: "Unfurnished",
+                amenities: "Parking, 24/7 Water Supply",
+                image: "images/house103.jpg",
+                description: "Affordable 1 BHK flat for rent in Harinagar.",
+                contact: "Contact Owner: +91 7665443322"
+            },
+            "property5": {
+                title: "2 BHK Villa",
+                location: "Near Navrachana University, Vadodara",
+                price: "30000/Month",
+                area: "1800 sq.ft.",
+                bedrooms: 2,
+                bathrooms: 2,
+                furnishing: "Semi Furnished",
+                amenities: "Garden, Parking, 24/7 Security, Water Supply",
+                image: "images/house104.jpg",
+                description: "Beautiful 2 BHK villa with ample space, close to educational institutes.",
+                contact: "Contact Agent: +91 9123456789"
+            },
+            "property6": {
+                title: "3 BHK Villa",
+                location: "Bakrol, Anand",
+                price: "50000/Month",
+                area: "2000 sq.ft.",
+                bedrooms: 3,
+                bathrooms: 3,
+                furnishing: "Fully Furnished",
+                amenities: "Private Backyard, Parking, 24/7 Security",
+                image: "images/house105.jpg",
+                description: "Spacious 3 BHK villa with a private backyard.",
+                contact: "Contact Owner: +91 9876543211"
+            },
+            "property7": {
+        title: "3 BHK Flat For Rent",
+        location: "Bhuj, Kutch",
+        price: "23000/Month",
+        area: "1400 sq.ft.",
+        bedrooms: 3,
+        bathrooms: 2,
+        furnishing: "Fully Furnished",
+        amenities: "Parking, Lift, 24/7 Security",
+        image: "images/house106.jpg",
+        description: "Well-maintained 3 BHK flat with all essential amenities in Bhuj.",
+        contact: "Contact Agent: +91 9933445566"
+    },
+    "property8": {
+        title: "2 BHK Flat for Rent",
+        location: "Dhordo, Kutch",
+        price: "25000/Month",
+        area: "1100 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 2,
+        furnishing: "Semi Furnished",
+        amenities: "Parking, Garden, 24/7 Water Supply",
+        image: "images/house107.webp",
+        description: "2 BHK flat in a peaceful location of Dhordo, suitable for families.",
+        contact: "Contact Owner: +91 9123456789"
+    },
+    "property9": {
+        title: "4 BHK Villa",
+        location: "Borivali East, Mumbai",
+        price: "70000/Month",
+        area: "2800 sq.ft.",
+        bedrooms: 4,
+        bathrooms: 4,
+        furnishing: "Fully Furnished",
+        amenities: "Private Pool, Gym, Garden, Parking, 24/7 Security",
+        image: "images/house108.jpg",
+        description: "Luxury 4 BHK villa with modern amenities, located in the heart of Mumbai.",
+        contact: "Contact Agent: +91 8234567890"
+    },
+    "property10": {
+        title: "1 BHK Flat for Rent",
+        location: "Malad West, Mumbai",
+        price: "15000/Month",
+        area: "650 sq.ft.",
+        bedrooms: 1,
+        bathrooms: 1,
+        furnishing: "Unfurnished",
+        amenities: "Parking, 24/7 Water Supply",
+        image: "images/house109.jpeg",
+        description: "Compact 1 BHK flat for rent in a quiet area of Malad West.",
+        contact: "Contact Owner: +91 9988776655"
+    },
+    "property11": {
+        title: "3 BHK Flat for Rent",
+        location: "Amritsar, Punjab",
+        price: "10000/Month",
+        area: "1400 sq.ft.",
+        bedrooms: 3,
+        bathrooms: 2,
+        furnishing: "Semi Furnished",
+        amenities: "Parking, 24/7 Water Supply, Security",
+        image: "images/house110.jpg",
+        description: "Spacious 3 BHK flat available for rent in Amritsar, ideal for families.",
+        contact: "Contact Owner: +91 9876543212"
+    },
+    "property12": {
+        title: "1 BHK Flat for Rent",
+        location: "Patiala, Punjab",
+        price: "15000/Month",
+        area: "700 sq.ft.",
+        bedrooms: 1,
+        bathrooms: 1,
+        furnishing: "Unfurnished",
+        amenities: "Parking, 24/7 Water Supply",
+        image: "images/house111.jpg",
+        description: "Affordable 1 BHK flat for rent in the heart of Patiala.",
+        contact: "Contact Agent: +91 9988776655"
+    },
+    "property13": {
+        title: "2 BHK Flat for Rent",
+        location: "Bathinda, Punjab",
+        price: "13000/Month",
+        area: "1000 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 1,
+        furnishing: "Semi Furnished",
+        amenities: "Parking, Garden, 24/7 Water Supply",
+        image: "images/house112.webp",
+        description: "Cozy 2 BHK flat for rent, ideal for small families.",
+        contact: "Contact Owner: +91 9123456789"
+    },
+    "property14": {
+        title: "4 BHK Flat for Rent",
+        location: "Ludhiana, Punjab",
+        price: "15900/Month",
+        area: "1800 sq.ft.",
+        bedrooms: 4,
+        bathrooms: 3,
+        furnishing: "Fully Furnished",
+        amenities: "Parking, 24/7 Water Supply, Lift, Security",
+        image: "images/house113.jpg",
+        description: "Spacious 4 BHK flat available for rent in a prime location of Ludhiana.",
+        contact: "Contact Agent: +91 9765432100"
+    },
+    "property15": {
+        title: "3 BHK Flat for Rent",
+        location: "Mahuva, Surat",
+        price: "17000/Month",
+        area: "1600 sq.ft.",
+        bedrooms: 3,
+        bathrooms: 2,
+        furnishing: "Semi Furnished",
+        amenities: "Parking, 24/7 Security, Garden",
+        image: "images/house115.jpg",
+        description: "Modern 3 BHK flat for rent with all necessary amenities in Mahuva.",
+        contact: "Contact Owner: +91 9988776655"
+    },
+    "property16": {
+        title: "2 BHK Flat for Rent",
+        location: "Kamrej, Surat",
+        price: "17000/Month",
+        area: "1600 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 1,
+        furnishing: "Semi Furnished",
+        amenities: "Parking, 24/7 Security, Garden",
+        image: "images/house115.jpg",
+        description: "Modern 3 BHK flat for rent with all necessary amenities in Mahuva.",
+        contact: "Contact Owner: +91 9988776655"
+    },
+    "property18": {
+        title: "2 BHK Flat for Rent",
+        location: "Akota,Vadodara",
+        price: "16000/Month",
+        area: "1100 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 1,
+        furnishing: "Furnished",
+        amenities: "Parking,Mini swimming pool",
+        image: "images/renthouse2.jpg",
+        description:"2 BHK flat for rent with amenities in Akota.",
+        contact: "Contact Owner: +91 9688876655"
+    },
+    "property19": {
+        title: "2 BHK Flat for Rent",
+        location: "Gandhinagar",
+        price: "19000/Month",
+        area: "1900 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 1,
+        furnishing: "Furnished",
+        amenities: "Parking,with mini garden",
+        image: "images/renthouse4.jpeg",
+        description:"2 BHK flat for rent with amenities in Akota.",
+        contact: "Contact Owner: +91 9688876655"
+    },
+    "property20": {
+        title: "2 BHK Flat for Rent",
+        location: "Mangrol,Surat",
+        price: "23000/Month",
+        area: "2500 sq.ft.",
+        bedrooms: 4,
+        bathrooms: 3,
+        furnishing: "Fully Furnished",
+        amenities: "Parking,with garden,Swimming pool",
+        image: "images/indeximg1.jpg",
+        description:"4 Bedroom flat for rent with all amenities.",
+        contact: "Contact Owner: +91 9688956645"
+    },"property21": {
+        title: "3 BHK Flat for Rent",
+        location: "Andheri,Mumbai",
+        price: "20000/Month",
+        area: "2000 sq.ft.",
+        bedrooms: 3,
+        bathrooms: 2,
+        furnishing: "Furnished",
+        amenities: "Parking,with mini garden,",
+        image: "images/indeximg3.jpg",
+        description:"3 BHK flat for rent with amenities in Mumbai.",
+        contact: "Contact Owner: +91 9687876651"
+    },"property22": {
+        title: "4 bedroom Flat for Rent",
+        location: "Dadar,Mumbai",
+        price: "21000/Month",
+        area: "1900 sq.ft.",
+        bedrooms: 4,
+        bathrooms: 3,
+        furnishing: "Furnished",
+        amenities: "Parking space,Garden,Swimming Pool",
+        image: "images/indeximg3.jpg",
+        description:"4 BHK flat for rent with amenities in Dadar.",
+        contact: "Contact Owner: +91 9688876655"
+    },"property23": {
+        title: "4 bedroom Flat for Rent",
+        location: "Bardoli,Surat",
+        price: "21000/Month",
+        area: "1900 sq.ft.",
+        bedrooms: 4,
+        bathrooms: 3,
+        furnishing: "Furnished",
+        amenities: "with large Parking space,garden",
+        image: "images/indeximg4.jpg",
+        description:"4 BHK flat for rent with amenities in Bardoli",
+        contact: "Contact Owner: +91 7636876655"
+    },
+    "property24": {
+        title: "2 bedroom Flat for Rent",
+        location: "Bhayli,vadodara",
+        price: "7000/Month",
+        area: "900 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 1,
+        furnishing: "Furnished",
+        amenities: "with Parking space,garden",
+        image: "images/indeximg5.jpeg",
+        description:"2 BHK flat for rent with amenities in Bhayli",
+        contact: "Contact Owner: +91 7636876655"
+    },
+    "property25": {
+        title: "2 bedroom Flat for Rent",
+        location: "Bardoli,Surat",
+        price: "9000/Month",
+        area: "900 sq.ft.",
+        bedrooms: 2,
+        bathrooms: 1,
+        furnishing: "Furnished",
+        amenities: "with Parking space,garden",
+        image: "images/indeximg6.jpg",
+        description:"2 BHK flat for rent with amenities in Bhayli",
+        contact: "Contact Owner: +91 7636876655"
+    },
+    
+        };
+
+        // Function to get URL parameter
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Load property details based on the `id` parameter
+        function loadPropertyDetails() {
+            const propertyId = getQueryParam("id");
+            const property = properties[propertyId];
+
+            if (property) {
+                document.getElementById("property-title").textContent = property.title;
+                document.getElementById("property-location").textContent = "Location: " + property.location;
+                document.getElementById("property-price").textContent = "Price: " + property.price;
+                document.getElementById("property-area").textContent = "Area: " + property.area;
+                document.getElementById("property-bedrooms").textContent = "Bedrooms: " + property.bedrooms;
+                document.getElementById("property-bathrooms").textContent = "Bathrooms: " + property.bathrooms;
+                document.getElementById("property-furnishing").textContent = "Furnishing: " + property.furnishing;
+                document.getElementById("property-amenities").textContent = "Amenities: " + property.amenities;
+                document.getElementById("property-description").textContent = property.description;
+                document.getElementById("property-contact").textContent = "Contact: " + property.contact;
+                document.getElementById("property-image").src = property.image;
+            } else {
+                document.querySelector(".property-details").innerHTML = "<p>Property not found.</p>";
+            }
+        }
+
+        // Load the property details when the page loads
+        window.onload = loadPropertyDetails;
+    </script>
+</body>
+</html>

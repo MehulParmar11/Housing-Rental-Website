@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property</title>
+    <link rel="stylesheet" href="style1.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add a New Property</h1>
+        <form action="add-property.php" method="POST" enctype="multipart/form-data"> <!-- Add enctype -->
+            <!-- Existing form fields -->
+        
+            <label for="property_image">Property Image</label>
+            <input type="file" id="property_image" name="property_image" accept="image/*" required> <!-- New file input -->
+            
+            <label for="property_id">Property ID</label>
+            <input type="text" id="property_id" name="property_id" required>
+
+            <label for="name">Owner Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="property_type">Property Type</label>
+            <input type="text" id="property_type" name="property_type" required>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="size">Size (sq. ft.)</label>
+            <input type="number" id="size" name="size" required>
+
+            <label for="furnished_status">Furnished Status</label>
+            <select id="furnished_status" name="furnished_status" required>
+                <option value="Furnished">Furnished</option>
+                <option value="Semi-Furnished">Semi-Furnished</option>
+                <option value="Unfurnished">Unfurnished</option>
+            </select>
+
+            <label for="availability_status">Availability Status</label>
+            <select id="availability_status" name="availability_status" required>
+                <option value="Available">Available</option>
+                <option value="Not Available">Not Available</option>
+            </select>
+
+            <label for="contact_info">Contact Info</label>
+            <input type="text" id="contact_info" name="contact_info" required>
+
+            <label for="pets_allowed">Pets Allowed</label>
+            <select id="pets_allowed" name="pets_allowed" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="lease_terms">Lease Terms</label>
+            <textarea id="lease_terms" name="lease_terms" rows="3" required></textarea>
+
+            <button type="submit">Add Property</button>
+        </form>
+    </div>
+</body>
+</html>

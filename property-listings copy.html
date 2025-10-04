@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Filter</title>
+    <style>
+        .filter-container {
+            margin: 20px;
+        }
+        .filter-container label {
+            margin-right: 10px;
+        }
+        .filter-container select {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="filter-container">
+        <h2>Filter Properties</h2>
+
+        <!-- City Filter -->
+        <label for="city">Select City:</label>
+        <select id="city">
+            <option value="">--Select City--</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Surat">Surat</option>
+            <option value="Rajkot">Rajkot</option>
+            <option value="Bhavnagar">Bhavnagar</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+        </select>
+        
+        <!-- Area Filter (Initially empty) -->
+        <label for="area">Select Area:</label>
+        <select id="area">
+            <option value="">--Select Area--</option>
+        </select>
+
+        <!-- Property Type Filter -->
+        <label for="property-type">Select Property Type:</label>
+        <select id="property-type">
+            <option value="">--Select Property Type--</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Penthouse">Penthouse</option>
+            <option value="Villa">Villa</option>
+        </select>
+
+        <!-- Availability Filter -->
+        <label for="availability">Availability:</label>
+        <select id="availability">
+            <option value="">--Select Availability--</option>
+            <option value="Available">Available</option>
+            <option value="Not Available">Not Available</option>
+        </select>
+
+        <!-- Filter Button -->
+        <button id="filter-btn">Apply Filter</button>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results">
+        <h3>Filtered Results</h3>
+        <ul id="property-list">
+            <!-- Filtered properties will be displayed here -->
+        </ul>
+    </div>
+
+    <script>
+        const properties = [
+            { city: "Ahmedabad", area: "Bodakdev", propertyType: "Apartment", available: "Available" },
+            { city: "Vadodara", area: "Akota", propertyType: "Villa", available: "Not Available" },
+            { city: "Surat", area: "Adajan", propertyType: "Duplex", available: "Available" },
+            { city: "Rajkot", area: "Kalavad Road", propertyType: "Penthouse", available: "Not Available" },
+            { city: "Gandhinagar", area: "Sector 16", propertyType: "Apartment", available: "Available" },
+            // Add more properties as needed
+        ];
+
+        // City-Area mapping
+        const cityAreas = {
+            Ahmedabad: ["Bodakdev", "Thaltej", "Satellite"],
+            Vadodara: ["Akota", "Bhayli", "Fategunj"],
+            Surat: ["Adajan", "Dumas", "Ghod Dod Road"],
+            Rajkot: ["Kalavad Road", "Race Course", "Shastri Nagar"],
+            Bhavnagar: ["Palitana", "Gadhsisha", "Mahuva"],
+            Gandhinagar: ["Sector 16", "Koba", "Sargasan"]
+        };
+
+        // Populate area based on selected city
+        document.getElementById("city").addEventListener("change", function() {
+            const selectedCity = this.value;
+            const areaSelect = document.getElementById("area");
+            areaSelect.innerHTML = '<option value="">--Select Area--</option>'; // Reset areas
+
+            if (selectedCity && cityAreas[selectedCity]) {
+                cityAreas[selectedCity].forEach(area => {
+                    const option = document.createElement("option");
+                    option.value = area;
+                    option.textContent = area;
+                    areaSelect.appendChild(option);
+                });
+            }
+        });
+
+        // Filter properties
+        document.getElementById("filter-btn").addEventListener("click", function() {
+            const city = document.getElementById("city").value;
+            const area = document.getElementById("area").value;
+            const propertyType = document.getElementById("property-type").value;
+            const availability = document.getElementById("availability").value;
+
+            const filteredProperties = properties.filter(property => {
+                return (
+                    (city === "" || property.city === city) &&
+                    (area === "" || property.area === area) &&
+                    (propertyType === "" || property.propertyType === propertyType) &&
+                    (availability === "" || property.available === availability)
+                );
+            });
+
+            // Display filtered results
+            const results = document.getElementById("property-list");
+            results.innerHTML = ""; // Clear previous results
+
+            if (filteredProperties.length > 0) {
+                filteredProperties.forEach(property => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${property.city} - ${property.area} - ${property.propertyType} - ${property.available}`;
+                    results.appendChild(listItem);
+                });
+            } else {
+                results.innerHTML = "<p>No properties found.</p>";
+            }
+        });
+    </script>
+
+</body>
+</html>

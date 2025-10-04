@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            
+            <li><a href="about.html" class="login-button">About</a></li>
+            <li><a href="property-listings.html" class="login-button">Properties</a></li>
+            <li><a href="Index.html" class="login-button">Log out</a></li>
+        </ul>
+    </nav>
+    <section class="search-section">
+        <div class="content-wrapper">
+            <h1>Properties in Gujarat</h1>
+            <div class="tab-menu">
+                <div class="tab">
+                    <a href="rent.html">Rent</a>
+                </div>
+                <div class="tab">
+                    <a href="PG.html">PG/Co-Living</a>
+                </div>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Enter City" class="state-input" list="city-list" id="city-input">
+                <datalist id="city-list">
+                    <option value="Ahmedabad">
+                    <option value="Vadodara">
+                    <option value="Surat">
+                    <option value="Anand">
+                    <option value="Bhavnagar">
+                    <option value="Gandhinagar">
+                </datalist>
+
+                <input type="text" placeholder="Enter Area" class="search-input" id="area-input" list="area-select">
+                <datalist id="area-select">
+                    <option value="">Select Area</option>
+                </datalist>
+
+                <a href="property-listings.html" class="search-btn">Search</a>
+            </div>
+
+            <div class="properties-container">
+                <div class="property">
+                    <img src="images/rental-laws.jpg" alt="Property 1">
+                    <center>
+                        <h3>2 Bedroom Apartment</h3>
+                        <p>Location: Thaltej,Ahmedabad</p>
+                        <p>Price: 23000/month</p>
+                        <a href="property-details.html?id=property1" class="details-button">View Details</a>
+                    </center>
+                </div>
+                <div class="property">
+                    <img src="images/renthouse2.jpg" alt="Property 2">
+                    <center>
+                        <h3>2 Bedroom House</h3>
+                        <p>Location: Akota,Vadodara</p>
+                        <p>Price: 16000/month</p>
+                        <a href="property-details.html?id=property18" class="details-button">View Details</a>
+                    </center>
+                </div>
+                <div class="property">
+                    <img src="images/house103.jpg" alt="Property 1">
+                    <center>
+                        <h3>1 BHK Flat for Rent</h3>
+                        <p>Location: Harinagar, Vadodara</p>
+                        <p>Price: 13000/Month</p>
+                        <a href="property-details.html?id=property4" class="details-button">View Details</a>
+                    </center>
+                </div>
+                <div class="property">
+                    <img src="images/renthouse4.jpeg" alt="Property 2">
+                    <center>
+                        <h3>2 Bedroom House</h3>
+                        <p>Location: Gandhinagar</p>
+                        <p>Price: 19000/month</p>
+                        <a href="property-details.html?id=property19" class="details-button">View Details</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>

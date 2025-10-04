@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Details</h2>
+        <form action="payment.php" method="post">
+            <label for="payment_method">Payment Method:</label>
+            <br>
+            <input type="radio" id="card" name="payment_method" value="card" required>
+            <label for="card">Credit Card/Debit Card</label>
+            <br>
+            <input type="radio" id="net_banking" name="payment_method" value="net_banking">
+            <label for="net_banking">Net Banking</label>
+            <br>
+            <input type="radio" id="upi" name="payment_method" value="upi">
+            <label for="upi">UPI</label>
+            <br>
+            <div id="card_details" style="display: none;">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number">
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry">
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" name="cvv">
+            </div>
+            <div id="banking_details" style="display: none;">
+                <label for="bank_name">Bank Name:</label>
+                <input type="text" id="bank_name" name="bank_name">
+                <label for="account_number">Account Number:</label>
+                <input type="text" id="account_number" name="account_number">
+                <label for="ifsc_code">IFSC Code:</label>
+                <input type="text" id="ifsc_code" name="ifsc_code">
+            </div>
+            <div id="upi_details" style="display: none;">
+                <label for="upi_id">UPI ID:</label>
+                <input type="text" id="upi_id" name="upi_id">
+            </div>
+            <input type="submit" value="Proceed to Payment">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var paymentMethods = document.querySelectorAll('input[name="payment_method"]');
+            paymentMethods.forEach(function(method) {
+                method.addEventListener('change', function() {
+                    var cardDetails = document.getElementById('card_details');
+                    var bankingDetails = document.getElementById('banking_details');
+                    var upiDetails = document.getElementById('upi_details');
+                    if (this.value === 'card') {
+                        cardDetails.style.display = 'block';
+                        bankingDetails.style.display = 'none';
+                        upiDetails.style.display = 'none';
+                    } else if (this.value === 'net_banking') {
+                        cardDetails.style.display = 'none';
+                        bankingDetails.style.display = 'block';
+                        upiDetails.style.display = 'none';
+                    } else if (this.value === 'upi') {
+                        cardDetails.style.display = 'none';
+                        bankingDetails.style.display = 'none';
+                        upiDetails.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

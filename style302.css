@@ -1,0 +1,189 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-left: 990px;
+}
+
+nav ul.nav-links li {
+    position: relative;
+}
+
+nav ul.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+/* Dropdown Styles */
+nav ul.nav-links .dropdown {
+    position: relative;
+}
+
+nav ul.nav-links .dropdown .dropdown-btn {
+    cursor: pointer;
+}
+
+nav ul.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav ul.nav-links .dropdown-content a {
+    padding: 12px 16px;
+    text-align: left;
+    color: white;
+}
+
+nav ul.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul.nav-links .dropdown-content a:hover {
+    background-color: #575757;
+}
+
+nav ul.nav-links li a:hover {
+    background-color: #575757;
+}
+
+/* Property Listing Styles */
+.listings-container {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.properties-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+/* To ensure properties take up the space correctly */
+.property {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Space between properties */
+}
+
+.property img {
+    width: 100%; /* Set to 100% width */
+    max-width: 700px; /* Limits the width of the image */
+    height: 250px; /* Maintains aspect ratio */
+    border-radius: 8px; /* Keeps the rounded corners */
+    display: block; /* Centers the image within the parent */
+    margin: 0 auto; /* Center the image */
+}
+
+.property p {
+    margin: 5px 0;
+}
+
+/* Details button */
+.details-button {
+    background-color: #614cea;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #3a2db3;
+}
+
+/* Property details */
+.property-details {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Consistent styling for individual property details */
+.property-detail {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.property-detail img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Book button */
+.book-button {
+    display: inline-block;
+    background-color: #614cea;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #3a2db3;
+}
+
+/* Consistent styling for the individual property details section */
+.property-details h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.property-details img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.property-details p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.property-details .book-button {
+    margin-top: 30px;
+}
